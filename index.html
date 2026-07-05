@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danish — Data Analyst & M.Sc. Data Science</title>
+<meta name="description" content="Portfolio of Danish — Data Analyst with 3 years of production Power BI experience, M.Sc. Data Science student at Fulda University of Applied Sciences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B1017;
+  --surface:#111925;
+  --surface-2:#16202E;
+  --line:#22303F;
+  --text:#E9EEF5;
+  --muted:#8FA3B8;
+  --amber:#F0B429;
+  --cyan:#56C6E0;
+  --green:#4CC38A;
+  --font-display:"Space Grotesk",sans-serif;
+  --font-body:"IBM Plex Sans",sans-serif;
+  --font-mono:"IBM Plex Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ---------- Nav ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,16,23,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--font-mono);font-size:.95rem;color:var(--text)}
+.logo .prompt{color:var(--amber)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--muted);font-size:.9rem;font-weight:500}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+
+/* ---------- Section scaffolding ---------- */
+section{padding:88px 0}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.85rem;
+  color:var(--amber);
+  display:block;
+  margin-bottom:14px;
+}
+h2{
+  font-family:var(--font-display);
+  font-size:clamp(1.6rem,3vw,2.1rem);
+  font-weight:600;
+  letter-spacing:-.01em;
+  margin-bottom:12px;
+}
+.section-intro{color:var(--muted);max-width:640px;margin-bottom:44px}
+
+/* ---------- Hero ---------- */
+.hero{padding:96px 0 72px}
+.hero-role{
+  font-family:var(--font-mono);
+  font-size:.9rem;
+  color:var(--cyan);
+  margin-bottom:18px;
+  display:block;
+}
+h1{
+  font-family:var(--font-display);
+  font-size:clamp(2.3rem,5.5vw,3.6rem);
+  font-weight:700;
+  letter-spacing:-.02em;
+  line-height:1.12;
+  max-width:760px;
+}
+h1 .accent{color:var(--amber)}
+.hero-sub{color:var(--muted);max-width:600px;margin:22px 0 34px;font-size:1.05rem}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-block;
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:.95rem;
+  padding:12px 22px;
+  border-radius:8px;
+  border:1px solid var(--line);
+  color:var(--text);
+  transition:transform .15s ease,border-color .15s ease;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px);border-color:var(--muted)}
+.btn-primary{background:var(--amber);border-color:var(--amber);color:#171207}
+.btn-primary:hover{border-color:var(--amber)}
+
+/* ---------- KPI dashboard (signature) ---------- */
+.kpi-board{
+  margin-top:64px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--surface);
+  overflow:hidden;
+}
+.kpi-board-titlebar{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 18px;
+  border-bottom:1px solid var(--line);
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  color:var(--muted);
+}
+.kpi-board-titlebar .dot{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.kpi-board-titlebar .dot.live{background:var(--green)}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+}
+.kpi-card{
+  background:var(--surface);
+  padding:26px 22px 22px;
+  position:relative;
+}
+.kpi-value{
+  font-family:var(--font-display);
+  font-size:clamp(1.9rem,3.4vw,2.5rem);
+  font-weight:700;
+  color:var(--text);
+  line-height:1;
+}
+.kpi-value .unit{font-size:.55em;color:var(--amber);margin-left:2px}
+.kpi-label{
+  font-size:.85rem;
+  color:var(--muted);
+  margin-top:10px;
+  line-height:1.45;
+}
+.kpi-spark{margin-top:16px;display:block}
+.kpi-spark path{fill:none;stroke:var(--cyan);stroke-width:2;opacity:.85}
+.kpi-spark .area{fill:var(--cyan);opacity:.08;stroke:none}
+.kpi-card:nth-child(2) .kpi-spark path{stroke:var(--amber)}
+.kpi-card:nth-child(2) .kpi-spark .area{fill:var(--amber)}
+.kpi-card:nth-child(4) .kpi-spark path{stroke:var(--green)}
+.kpi-card:nth-child(4) .kpi-spark .area{fill:var(--green)}
+.kpi-note{
+  padding:10px 18px;
+  border-top:1px solid var(--line);
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  color:var(--muted);
+}
+
+/* ---------- Skills ---------- */
+.skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill-group{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:24px;
+}
+.skill-group h3{
+  font-family:var(--font-mono);
+  font-size:.82rem;
+  font-weight:500;
+  color:var(--cyan);
+  margin-bottom:16px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{
+  font-family:var(--font-mono);
+  font-size:.8rem;
+  color:var(--text);
+  background:var(--surface-2);
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:5px 10px;
+}
+
+/* ---------- Projects ---------- */
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.project-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  transition:transform .18s ease,border-color .18s ease;
+}
+.project-card:hover{transform:translateY(-3px);border-color:#33465C}
+.project-card h3{
+  font-family:var(--font-display);
+  font-size:1.15rem;
+  font-weight:600;
+  margin-bottom:10px;
+}
+.project-card p{color:var(--muted);font-size:.93rem;flex:1}
+.project-meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.project-meta .tag{font-size:.74rem;padding:4px 9px}
+.project-link{
+  margin-top:18px;
+  font-family:var(--font-mono);
+  font-size:.83rem;
+}
+.project-link::after{content:" \2192"}
+
+/* ---------- Power BI gallery ---------- */
+.disclaimer{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  color:var(--muted);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:8px 14px;
+  margin-bottom:40px;
+}
+.disclaimer .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0}
+.dash{
+  margin-bottom:56px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+}
+.dash-head{
+  padding:24px 26px 20px;
+  border-bottom:1px solid var(--line);
+}
+.dash-head h3{
+  font-family:var(--font-display);
+  font-size:1.2rem;
+  font-weight:600;
+  margin-bottom:8px;
+}
+.dash-head p{color:var(--muted);font-size:.93rem;max-width:720px}
+.dash-tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.dash-frame{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9.6; /* Power BI publish-to-web adds a small footer bar */
+  background:var(--surface-2);
+}
+.dash-frame iframe{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  border:0;
+}
+.dash-placeholder{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:10px;
+  color:var(--muted);
+  font-family:var(--font-mono);
+  font-size:.85rem;
+  text-align:center;
+  padding:24px;
+}
+.dash-placeholder .big{font-size:2rem;color:var(--line)}
+
+/* ---------- Contact / footer ---------- */
+.contact-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:44px;
+  text-align:center;
+}
+.contact-card h2{margin-bottom:10px}
+.contact-card p{color:var(--muted);max-width:520px;margin:0 auto 28px}
+footer{
+  border-top:1px solid var(--line);
+  padding:28px 0;
+  font-family:var(--font-mono);
+  font-size:.78rem;
+  color:var(--muted);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .skill-groups{grid-template-columns:1fr}
+  .project-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .nav-links{display:none}
+  .kpi-grid{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .contact-card{padding:32px 20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main">
+      <span class="logo"><span class="prompt">danish@portfolio</span>:~$</span>
+      <ul class="nav-links">
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#dashboards">Dashboards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-role">Data Analyst · M.Sc. Data Science @ Hochschule Fulda</span>
+    <h1>I turn raw data into decisions —<br>with <span class="accent">Power&nbsp;BI</span>, Python & SQL.</h1>
+    <p class="hero-sub">
+      Three years of production analytics experience: building ETL pipelines, automating reporting
+      workflows, and shipping dashboards that teams actually use. Currently deepening my ML skills
+      in my master's — from fairness-aware modeling to computer vision.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#dashboards">View dashboards</a>
+      <a class="btn" href="#projects">Browse projects</a>
+    </div>
+
+    <!-- Signature element: the portfolio opens like a dashboard -->
+    <div class="kpi-board reveal" aria-label="Career impact metrics">
+      <div class="kpi-board-titlebar">
+        <span class="dot live"></span><span class="dot"></span><span class="dot"></span>
+        <span>impact_report.pbix — measured outcomes, 2023–2026</span>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-value"><span class="count" data-target="40">0</span><span class="unit">%</span></div>
+          <div class="kpi-label">Reduction in manual reporting effort through automated Power BI pipelines</div>
+          <svg class="kpi-spark" viewBox="0 0 120 32" width="120" height="32" aria-hidden="true">
+            <path class="area" d="M0,26 L20,22 L40,24 L60,16 L80,12 L100,10 L120,4 L120,32 L0,32 Z"/>
+            <path d="M0,26 L20,22 L40,24 L60,16 L80,12 L100,10 L120,4"/>
+          </svg>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value"><span class="count" data-target="30">0</span><span class="unit">%</span></div>
+          <div class="kpi-label">Faster data processing via optimized SQL and Python validation</div>
+          <svg class="kpi-spark" viewBox="0 0 120 32" width="120" height="32" aria-hidden="true">
+            <path class="area" d="M0,28 L20,25 L40,20 L60,21 L80,14 L100,9 L120,6 L120,32 L0,32 Z"/>
+            <path d="M0,28 L20,25 L40,20 L60,21 L80,14 L100,9 L120,6"/>
+          </svg>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value"><span class="count" data-target="15">0</span><span class="unit">+ hrs/wk</span></div>
+          <div class="kpi-label">Team capacity freed through a self-initiated Power Automate workflow</div>
+          <svg class="kpi-spark" viewBox="0 0 120 32" width="120" height="32" aria-hidden="true">
+            <path class="area" d="M0,27 L20,24 L40,18 L60,19 L80,11 L100,8 L120,5 L120,32 L0,32 Z"/>
+            <path d="M0,27 L20,24 L40,18 L60,19 L80,11 L100,8 L120,5"/>
+          </svg>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value"><span class="count" data-target="0">0</span><span class="unit">restatements</span></div>
+          <div class="kpi-label">Reporting errors requiring correction across three years of delivery</div>
+          <svg class="kpi-spark" viewBox="0 0 120 32" width="120" height="32" aria-hidden="true">
+            <path class="area" d="M0,16 L20,16 L40,16 L60,16 L80,16 L100,16 L120,16 L120,32 L0,32 Z"/>
+            <path d="M0,16 L20,16 L40,16 L60,16 L80,16 L100,16 L120,16"/>
+          </svg>
+        </div>
+      </div>
+      <div class="kpi-note">-- figures from my role as Data Analyst at Sead Digital (2023–2026)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="wrap">
+    <span class="eyebrow">-- skills</span>
+    <h2>Toolset</h2>
+    <p class="section-intro">The stack I work in daily, from data engineering to modeling to the last-mile dashboard.</p>
+    <div class="skill-groups reveal">
+      <div class="skill-group">
+        <h3>Analytics & BI</h3>
+        <div class="tags">
+          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Tableau</span>
+          <span class="tag">Power Automate</span><span class="tag">A/B testing</span><span class="tag">Regression</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Data & Engineering</h3>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PostgreSQL</span>
+          <span class="tag">ETL pipelines</span><span class="tag">AWS</span><span class="tag">R</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Machine Learning</h3>
+        <div class="tags">
+          <span class="tag">scikit-learn</span><span class="tag">PyTorch</span><span class="tag">Fairlearn</span>
+          <span class="tag">AIF360</span><span class="tag">NLP</span><span class="tag">Computer vision</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="wrap">
+    <span class="eyebrow">-- projects</span>
+    <h2>Selected projects</h2>
+    <p class="section-intro">Academic and personal work from my M.Sc. — each links to a repository with the full notebook or code.</p>
+    <div class="project-grid reveal">
+
+      <article class="project-card">
+        <h3>Fairness in ML — paper replication</h3>
+        <p>Replicated a 2024 fairness research study end-to-end on the Adult Income dataset: pre-, in-, and post-processing bias interventions, with metric comparisons across demographic groups.</p>
+        <div class="project-meta">
+          <span class="tag">Fairlearn</span><span class="tag">AIF360</span><span class="tag">scikit-learn</span>
+        </div>
+        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+      </article>
+
+      <article class="project-card">
+        <h3>Serverless digit recognition on AWS</h3>
+        <p>MNIST classification deployed as a cloud pipeline — EC2 for training, Lambda for inference, S3 and DynamoDB for storage, behind an Elastic Load Balancer. ~90% accuracy in production setup.</p>
+        <div class="project-meta">
+          <span class="tag">AWS Lambda</span><span class="tag">EC2</span><span class="tag">DynamoDB</span>
+        </div>
+        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+      </article>
+
+      <article class="project-card">
+        <h3>Object detection with PyTorch</h3>
+        <p>Built and trained CNN and R-CNN architectures for object detection, covering the full workflow from data augmentation to evaluation.</p>
+        <div class="project-meta">
+          <span class="tag">PyTorch</span><span class="tag">CNN</span><span class="tag">R-CNN</span>
+        </div>
+        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+      </article>
+
+      <article class="project-card">
+        <h3>Bilingual text classification</h3>
+        <p>NLP classifier over 10,000+ records in two languages using TF-IDF feature extraction and classical ML models, with careful attention to leakage-free evaluation.</p>
+        <div class="project-meta">
+          <span class="tag">NLP</span><span class="tag">TF-IDF</span><span class="tag">Python</span>
+        </div>
+        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+      </article>
+
+      <article class="project-card">
+        <h3>Climate data analysis with ERA-5</h3>
+        <p>Multidimensional analysis of ERA-5 reanalysis data: xarray pipelines, 16 interpolation methods compared, and brushing-and-linking visualizations to identify the North Atlantic Jet Stream.</p>
+        <div class="project-meta">
+          <span class="tag">xarray</span><span class="tag">Geospatial</span><span class="tag">Visualization</span>
+        </div>
+        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+      </article>
+
+      <article class="project-card">
+        <h3>Housing price prediction</h3>
+        <p>Boston housing prices modeled with OLS regression and Random Forest (GridSearchCV tuning), including collinearity analysis and an ethical review of demographically derived features.</p>
+        <div class="project-meta">
+          <span class="tag">Random Forest</span><span class="tag">OLS</span><span class="tag">GridSearchCV</span>
+        </div>
+        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= POWER BI GALLERY ================= -->
+<section id="dashboards">
+  <div class="wrap">
+    <span class="eyebrow">-- dashboards</span>
+    <h2>Power BI gallery</h2>
+    <p class="section-intro">
+      Interactive reports you can click, filter, and cross-highlight — rebuilt from scratch with
+      public sample data to mirror the kinds of reporting I delivered in production.
+    </p>
+    <div class="disclaimer">
+      <span class="dot"></span>
+      All dashboards use synthetic or public sample data. No client or employer data is shown.
+    </div>
+
+    <!-- ============================================================
+         HOW TO ADD A DASHBOARD:
+         1. Open your report in Power BI Service (app.powerbi.com)
+         2. File → Embed report → Publish to web (public)
+         3. Copy the URL from the generated <iframe src="...">
+         4. Paste it into the src="" below and delete the
+            <div class="dash-placeholder"> block for that slot.
+         ============================================================ -->
+
+    <article class="dash reveal">
+      <div class="dash-head">
+        <h3>Sales & revenue overview</h3>
+        <p>
+          Executive-level view of revenue, margin, and regional performance with drill-through to
+          product detail. Highlights: dynamic time intelligence in DAX, a star-schema data model,
+          and bookmark-driven navigation.
+        </p>
+        <div class="dash-tags">
+          <span class="tag">DAX time intelligence</span><span class="tag">Star schema</span><span class="tag">Drill-through</span>
+        </div>
+      </div>
+      <div class="dash-frame">
+        <iframe title="Sales and revenue overview dashboard" src="" loading="lazy" allowfullscreen></iframe>
+        <div class="dash-placeholder">
+          <span class="big">▦</span>
+          <span>Paste your Publish-to-web URL into this slot's iframe src</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="dash reveal">
+      <div class="dash-head">
+        <h3>Operations & process monitoring</h3>
+        <p>
+          Operational dashboard tracking throughput, SLA compliance, and bottlenecks. Highlights:
+          incremental-refresh-ready model design, conditional formatting for exception surfacing,
+          and automated refresh via scheduled pipelines.
+        </p>
+        <div class="dash-tags">
+          <span class="tag">SLA tracking</span><span class="tag">Conditional formatting</span><span class="tag">Automated refresh</span>
+        </div>
+      </div>
+      <div class="dash-frame">
+        <iframe title="Operations monitoring dashboard" src="" loading="lazy" allowfullscreen></iframe>
+        <div class="dash-placeholder">
+          <span class="big">▦</span>
+          <span>Paste your Publish-to-web URL into this slot's iframe src</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="dash reveal">
+      <div class="dash-head">
+        <h3>HR & workforce analytics</h3>
+        <p>
+          Headcount, attrition, and hiring-funnel analysis with slicer-driven cohort comparisons.
+          Highlights: measures built for what-if parameters, decomposition tree for attrition
+          drivers, and row-level design considerations.
+        </p>
+        <div class="dash-tags">
+          <span class="tag">What-if parameters</span><span class="tag">Decomposition tree</span><span class="tag">Cohort analysis</span>
+        </div>
+      </div>
+      <div class="dash-frame">
+        <iframe title="HR and workforce analytics dashboard" src="" loading="lazy" allowfullscreen></iframe>
+        <div class="dash-placeholder">
+          <span class="big">▦</span>
+          <span>Paste your Publish-to-web URL into this slot's iframe src</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <span class="eyebrow">-- contact</span>
+      <h2>Open to Werkstudent & internship roles</h2>
+      <p>Based in Fulda, Germany · available immediately · English C2, German A2 (improving fast).</p>
+      <div class="hero-cta" style="justify-content:center">
+        <a class="btn btn-primary" href="mailto:YOUR_EMAIL@example.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/YOUR_PROFILE" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/YOUR_USERNAME" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+    <span>© 2026 Danish — built by hand, no site builder</span>
+    <span>hosted on GitHub Pages</span>
+  </div>
+</footer>
+
+<script>
+// Reveal-on-scroll
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealEls = document.querySelectorAll('.reveal');
+if (reduceMotion) {
+  revealEls.forEach(el => el.classList.add('visible'));
+} else {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+}
+
+// KPI count-up
+function countUp(el) {
+  const target = parseInt(el.dataset.target, 10);
+  if (reduceMotion || target === 0) { el.textContent = target; return; }
+  const duration = 1200;
+  const start = performance.now();
+  function tick(now) {
+    const p = Math.min((now - start) / duration, 1);
+    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const counters = document.querySelectorAll('.count');
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { countUp(e.target); cio.unobserve(e.target); }
+  });
+}, { threshold: 0.4 });
+counters.forEach(c => cio.observe(c));
+
+// Hide placeholder when an iframe src is filled in
+document.querySelectorAll('.dash-frame').forEach(frame => {
+  const iframe = frame.querySelector('iframe');
+  const ph = frame.querySelector('.dash-placeholder');
+  if (iframe && ph && iframe.getAttribute('src')) ph.style.display = 'none';
+});
+</script>
+
+</body>
+</html>
