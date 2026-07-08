@@ -16,28 +16,38 @@ Single-file static site (`index.html`), no build step, hosted on GitHub Pages.
 > Alternative: name the repo anything (e.g. `portfolio`) and the site lives at
 > `https://YOUR_USERNAME.github.io/portfolio` instead.
 
-## Before publishing — replace the placeholders
+## Adding your Power BI dashboards (any number — 5, 10, more)
 
-Search `index.html` for these and update:
+The gallery is driven by the `DASHBOARDS` array in the `<script>` block at the
+bottom of `index.html`. Each dashboard is one object:
 
-- `YOUR_USERNAME` — your GitHub username (project links + GitHub button)
-- `YOUR_EMAIL@example.com` — your contact email
-- `YOUR_PROFILE` — your LinkedIn profile slug
-- Project repo links — point each card at its real repository
+```js
+{
+  title: "Sales & revenue overview",
+  description: "What it shows + technical highlights (DAX, modeling, etc.).",
+  tags: ["DAX time intelligence", "Star schema"],
+  embedUrl: ""   // paste your Publish-to-web URL here
+}
+```
 
-## Adding your Power BI dashboards
+Add or remove entries freely — the selector strip scrolls horizontally, and
+only the selected dashboard's iframe is loaded, so 10 dashboards won't slow
+the page down.
 
-Each dashboard slot in the gallery has an empty `<iframe src="">`.
+To get each `embedUrl`:
 
 1. Rebuild the dashboard with **sample or synthetic data only** — never real
-   company data, even aggregated. Good sources: Contoso, AdventureWorks,
-   Kaggle datasets, or Power BI's built-in samples.
+   company or client data, even aggregated. Good sources: Contoso,
+   AdventureWorks, Kaggle datasets, or Power BI's built-in samples.
 2. Publish the report to Power BI Service (app.powerbi.com), into **My workspace**.
 3. In the service: **File → Embed report → Publish to web (public)**.
 4. Copy only the URL from the generated iframe code
    (it looks like `https://app.powerbi.com/view?r=eyJr...`).
-5. Paste it into the matching `src=""` in `index.html`. The placeholder text
-   hides automatically once a `src` is present.
+5. Paste it into that dashboard's `embedUrl`. The "coming soon" placeholder
+   hides automatically once a URL is present.
+
+Five example entries are pre-filled (sales, operations, HR, marketing,
+finance) — rename them to match the templates you actually rebuild.
 
 **If "Publish to web" is greyed out:** your Power BI tenant admin (e.g. the
 university's) has disabled it. Options: ask the admin, use a different tenant,

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Danish — Data Analyst & M.Sc. Data Science</title>
-<meta name="description" content="Portfolio of Danish — Data Analyst with 3 years of production Power BI experience, M.Sc. Data Science student at Fulda University of Applied Sciences.">
+<title>Danish Mahmood Ali — Data Analyst & M.Sc. Data Science</title>
+<meta name="description" content="Portfolio of Danish Mahmood Ali — Data Analyst with 3 years of production Power BI experience, M.Sc. Data Science student at Fulda University of Applied Sciences.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -280,6 +280,43 @@ h1 .accent{color:var(--amber)}
 }
 .dash-placeholder .big{font-size:2rem;color:var(--line)}
 
+/* ---------- Dashboard switcher ---------- */
+.dash-tabs{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding-bottom:14px;
+  margin-bottom:22px;
+  scrollbar-width:thin;
+  scrollbar-color:var(--line) transparent;
+  -webkit-overflow-scrolling:touch;
+}
+.dash-tabs::-webkit-scrollbar{height:6px}
+.dash-tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.dash-tab{
+  flex-shrink:0;
+  font-family:var(--font-mono);
+  font-size:.82rem;
+  color:var(--muted);
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:9px 16px;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:color .15s ease,border-color .15s ease;
+}
+.dash-tab:hover{color:var(--text);border-color:#33465C}
+.dash-tab[aria-selected="true"]{
+  color:#171207;
+  background:var(--amber);
+  border-color:var(--amber);
+  font-weight:500;
+}
+
+/* ---------- Projects "see more" ---------- */
+.projects-more{margin-top:36px;text-align:center}
+
 /* ---------- Contact / footer ---------- */
 .contact-card{
   background:var(--surface);
@@ -440,58 +477,80 @@ footer{
 
       <article class="project-card">
         <h3>Fairness in ML — paper replication</h3>
-        <p>Replicated a 2024 fairness research study end-to-end on the Adult Income dataset: pre-, in-, and post-processing bias interventions, with metric comparisons across demographic groups.</p>
+        <p>Replicated bias-mitigation experiments from arXiv:2412.09896 end-to-end on the Adult Income dataset — pre-, in-, and post-processing interventions, with post-processing cutting demographic parity difference by 99.7% at a 2.2pp accuracy cost.</p>
         <div class="project-meta">
-          <span class="tag">Fairlearn</span><span class="tag">AIF360</span><span class="tag">scikit-learn</span>
+          <span class="tag">Fairlearn</span><span class="tag">AIF360</span><span class="tag">XGBoost</span>
         </div>
-        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+        <a class="project-link" href="https://github.com/danishmahmoodali/fairness-in-ml-replication">View repository</a>
       </article>
 
       <article class="project-card">
-        <h3>Serverless digit recognition on AWS</h3>
-        <p>MNIST classification deployed as a cloud pipeline — EC2 for training, Lambda for inference, S3 and DynamoDB for storage, behind an Elastic Load Balancer. ~90% accuracy in production setup.</p>
+        <h3>Bilingual tweet classification</h3>
+        <p>Semi-supervised classification of code-switched English/Roman-Urdu tweets into 6 categories, reaching up to 92% accuracy — my B.Sc. final-year project with a co-authored research paper.</p>
         <div class="project-meta">
-          <span class="tag">AWS Lambda</span><span class="tag">EC2</span><span class="tag">DynamoDB</span>
+          <span class="tag">scikit-learn</span><span class="tag">SVM</span><span class="tag">Naive Bayes</span>
         </div>
-        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+        <a class="project-link" href="https://github.com/danishmahmoodali/bilingual-tweet-classification">View repository</a>
       </article>
 
       <article class="project-card">
-        <h3>Object detection with PyTorch</h3>
-        <p>Built and trained CNN and R-CNN architectures for object detection, covering the full workflow from data augmentation to evaluation.</p>
+        <h3>Vehicle price prediction</h3>
+        <p>Benchmarked 5 regressors on 1M vehicle listings — gradient boosting and an entity-embedding neural network reach ~4–5% MAPE where linear regression fails at 33%.</p>
         <div class="project-meta">
-          <span class="tag">PyTorch</span><span class="tag">CNN</span><span class="tag">R-CNN</span>
+          <span class="tag">CatBoost</span><span class="tag">LightGBM</span><span class="tag">Keras</span>
         </div>
-        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+        <a class="project-link" href="https://github.com/danishmahmoodali/vehicle-price-prediction">View repository</a>
       </article>
 
       <article class="project-card">
-        <h3>Bilingual text classification</h3>
-        <p>NLP classifier over 10,000+ records in two languages using TF-IDF feature extraction and classical ML models, with careful attention to leakage-free evaluation.</p>
+        <h3>Crypto market dashboard</h3>
+        <p>Real-time crypto analytics on a decoupled architecture: a FastAPI backend shielding a Streamlit/Plotly frontend from the CoinGecko API, with caching and rate-limit handling.</p>
         <div class="project-meta">
-          <span class="tag">NLP</span><span class="tag">TF-IDF</span><span class="tag">Python</span>
+          <span class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">Plotly</span>
         </div>
-        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+        <a class="project-link" href="https://github.com/danishmahmoodali/crypto-market-dashboard">View repository</a>
       </article>
 
       <article class="project-card">
-        <h3>Climate data analysis with ERA-5</h3>
-        <p>Multidimensional analysis of ERA-5 reanalysis data: xarray pipelines, 16 interpolation methods compared, and brushing-and-linking visualizations to identify the North Atlantic Jet Stream.</p>
+        <h3>ERA-5 atmospheric analysis</h3>
+        <p>Exploring a 4-D global climate reanalysis grid (37 pressure levels, 0.25° resolution) — memory-safe NetCDF handling, interpolation comparisons, and multi-scale visualization.</p>
         <div class="project-meta">
-          <span class="tag">xarray</span><span class="tag">Geospatial</span><span class="tag">Visualization</span>
+          <span class="tag">xarray</span><span class="tag">NetCDF</span><span class="tag">Matplotlib</span>
         </div>
-        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+        <a class="project-link" href="https://github.com/danishmahmoodali/era5-atmospheric-analysis">View repository</a>
       </article>
 
       <article class="project-card">
-        <h3>Housing price prediction</h3>
-        <p>Boston housing prices modeled with OLS regression and Random Forest (GridSearchCV tuning), including collinearity analysis and an ethical review of demographically derived features.</p>
+        <h3>Fashion-MNIST CNN pipeline</h3>
+        <p>End-to-end image classification packaged as CLI tools — data validation, preprocessing, and a Keras CNN with leakage-safe class balancing.</p>
         <div class="project-meta">
-          <span class="tag">Random Forest</span><span class="tag">OLS</span><span class="tag">GridSearchCV</span>
+          <span class="tag">TensorFlow/Keras</span><span class="tag">OpenCV</span><span class="tag">CLI</span>
         </div>
-        <a class="project-link" href="https://github.com/YOUR_USERNAME/REPO">View repository</a>
+        <a class="project-link" href="https://github.com/danishmahmoodali/fashion-mnist-cnn">View repository</a>
       </article>
 
+      <article class="project-card">
+        <h3>Mandelbrot smooth coloring</h3>
+        <p>Research project on artifact-free deep-zoom fractal rendering: a plugin-based coloring architecture with C0/C1 continuous iteration counts.</p>
+        <div class="project-meta">
+          <span class="tag">NumPy</span><span class="tag">TensorFlow</span><span class="tag">Plugin architecture</span>
+        </div>
+        <a class="project-link" href="https://github.com/danishmahmoodali/mandelbrot-smooth-coloring">View repository</a>
+      </article>
+
+      <article class="project-card">
+        <h3>MNIST digit recognition on AWS</h3>
+        <p>End-to-end cloud ML pipeline: EC2 training, serverless Lambda inference, S3 and DynamoDB storage, and load-balanced serving behind an ELB.</p>
+        <div class="project-meta">
+          <span class="tag">Lambda</span><span class="tag">EC2</span><span class="tag">DynamoDB</span>
+        </div>
+        <a class="project-link" href="https://github.com/danishmahmoodali/mnist-digit-recognition-aws">View repository</a>
+      </article>
+
+    </div>
+
+    <div class="projects-more">
+      <a class="btn" href="https://github.com/danishmahmoodali?tab=repositories" rel="noopener">See all repositories on GitHub →</a>
     </div>
   </div>
 </section>
@@ -511,76 +570,41 @@ footer{
     </div>
 
     <!-- ============================================================
-         HOW TO ADD A DASHBOARD:
-         1. Open your report in Power BI Service (app.powerbi.com)
-         2. File → Embed report → Publish to web (public)
-         3. Copy the URL from the generated <iframe src="...">
-         4. Paste it into the src="" below and delete the
-            <div class="dash-placeholder"> block for that slot.
+         HOW TO ADD / EDIT DASHBOARDS:
+         Scroll down to the DASHBOARDS array in the <script> at the
+         bottom of this file. Each dashboard is one object:
+
+           {
+             title: "Dashboard name",
+             description: "What it shows + technical highlights.",
+             tags: ["DAX", "Star schema"],
+             embedUrl: ""   // paste your Publish-to-web URL here
+           }
+
+         Add as many as you like (5, 10, more) — the selector strip
+         scrolls automatically. To get the URL: open the report in
+         Power BI Service → File → Embed report → Publish to web,
+         then copy the URL from the generated iframe code.
+         Only the selected dashboard's iframe is loaded, so many
+         dashboards won't slow the page down.
          ============================================================ -->
 
-    <article class="dash reveal">
-      <div class="dash-head">
-        <h3>Sales & revenue overview</h3>
-        <p>
-          Executive-level view of revenue, margin, and regional performance with drill-through to
-          product detail. Highlights: dynamic time intelligence in DAX, a star-schema data model,
-          and bookmark-driven navigation.
-        </p>
-        <div class="dash-tags">
-          <span class="tag">DAX time intelligence</span><span class="tag">Star schema</span><span class="tag">Drill-through</span>
+    <div class="dash-switcher reveal">
+      <div class="dash-tabs" role="tablist" aria-label="Dashboard selector" id="dashTabs"></div>
+      <article class="dash" style="margin-bottom:0">
+        <div class="dash-head">
+          <h3 id="dashTitle"></h3>
+          <p id="dashDesc"></p>
+          <div class="dash-tags" id="dashTags"></div>
         </div>
-      </div>
-      <div class="dash-frame">
-        <iframe title="Sales and revenue overview dashboard" src="" loading="lazy" allowfullscreen></iframe>
-        <div class="dash-placeholder">
-          <span class="big">▦</span>
-          <span>Paste your Publish-to-web URL into this slot's iframe src</span>
+        <div class="dash-frame" id="dashFrame">
+          <div class="dash-placeholder" id="dashPlaceholder">
+            <span class="big">▦</span>
+            <span>Embed coming soon — paste this dashboard's Publish-to-web URL into the DASHBOARDS array</span>
+          </div>
         </div>
-      </div>
-    </article>
-
-    <article class="dash reveal">
-      <div class="dash-head">
-        <h3>Operations & process monitoring</h3>
-        <p>
-          Operational dashboard tracking throughput, SLA compliance, and bottlenecks. Highlights:
-          incremental-refresh-ready model design, conditional formatting for exception surfacing,
-          and automated refresh via scheduled pipelines.
-        </p>
-        <div class="dash-tags">
-          <span class="tag">SLA tracking</span><span class="tag">Conditional formatting</span><span class="tag">Automated refresh</span>
-        </div>
-      </div>
-      <div class="dash-frame">
-        <iframe title="Operations monitoring dashboard" src="" loading="lazy" allowfullscreen></iframe>
-        <div class="dash-placeholder">
-          <span class="big">▦</span>
-          <span>Paste your Publish-to-web URL into this slot's iframe src</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="dash reveal">
-      <div class="dash-head">
-        <h3>HR & workforce analytics</h3>
-        <p>
-          Headcount, attrition, and hiring-funnel analysis with slicer-driven cohort comparisons.
-          Highlights: measures built for what-if parameters, decomposition tree for attrition
-          drivers, and row-level design considerations.
-        </p>
-        <div class="dash-tags">
-          <span class="tag">What-if parameters</span><span class="tag">Decomposition tree</span><span class="tag">Cohort analysis</span>
-        </div>
-      </div>
-      <div class="dash-frame">
-        <iframe title="HR and workforce analytics dashboard" src="" loading="lazy" allowfullscreen></iframe>
-        <div class="dash-placeholder">
-          <span class="big">▦</span>
-          <span>Paste your Publish-to-web URL into this slot's iframe src</span>
-        </div>
-      </div>
-    </article>
+      </article>
+    </div>
 
   </div>
 </section>
@@ -593,9 +617,9 @@ footer{
       <h2>Open to Werkstudent & internship roles</h2>
       <p>Based in Fulda, Germany · available immediately · English C2, German A2 (improving fast).</p>
       <div class="hero-cta" style="justify-content:center">
-        <a class="btn btn-primary" href="mailto:YOUR_EMAIL@example.com">Email me</a>
-        <a class="btn" href="https://www.linkedin.com/in/YOUR_PROFILE" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/YOUR_USERNAME" rel="noopener">GitHub</a>
+        <a class="btn btn-primary" href="mailto:danishma309@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/danish-mahmood-ali" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/danishmahmoodali" rel="noopener">GitHub</a>
       </div>
     </div>
   </div>
@@ -605,7 +629,7 @@ footer{
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
-    <span>© 2026 Danish — built by hand, no site builder</span>
+    <span>© 2026 Danish Mahmood Ali — built by hand, no site builder</span>
     <span>hosted on GitHub Pages</span>
   </div>
 </footer>
@@ -646,12 +670,89 @@ const cio = new IntersectionObserver(entries => {
 }, { threshold: 0.4 });
 counters.forEach(c => cio.observe(c));
 
-// Hide placeholder when an iframe src is filled in
-document.querySelectorAll('.dash-frame').forEach(frame => {
-  const iframe = frame.querySelector('iframe');
-  const ph = frame.querySelector('.dash-placeholder');
-  if (iframe && ph && iframe.getAttribute('src')) ph.style.display = 'none';
-});
+/* ============================================================
+   DASHBOARD GALLERY — edit this array to add your dashboards.
+   Paste each Publish-to-web URL into embedUrl.
+   Add or remove entries freely; the selector strip scrolls.
+   ============================================================ */
+const DASHBOARDS = [
+  {
+    title: "Sales & revenue overview",
+    description: "Executive-level view of revenue, margin, and regional performance with drill-through to product detail. Highlights: dynamic time intelligence in DAX, a star-schema data model, and bookmark-driven navigation.",
+    tags: ["DAX time intelligence", "Star schema", "Drill-through"],
+    embedUrl: ""
+  },
+  {
+    title: "Operations & process monitoring",
+    description: "Operational dashboard tracking throughput, SLA compliance, and bottlenecks. Highlights: incremental-refresh-ready model design, conditional formatting for exception surfacing, and automated refresh via scheduled pipelines.",
+    tags: ["SLA tracking", "Conditional formatting", "Automated refresh"],
+    embedUrl: ""
+  },
+  {
+    title: "HR & workforce analytics",
+    description: "Headcount, attrition, and hiring-funnel analysis with slicer-driven cohort comparisons. Highlights: what-if parameters, decomposition tree for attrition drivers, and row-level design considerations.",
+    tags: ["What-if parameters", "Decomposition tree", "Cohort analysis"],
+    embedUrl: ""
+  },
+  {
+    title: "Marketing performance",
+    description: "Campaign ROI, channel attribution, and funnel conversion tracking. Highlights: custom DAX attribution measures, dynamic titles driven by slicer state, and field parameters for metric switching.",
+    tags: ["Attribution", "Field parameters", "Funnel analysis"],
+    embedUrl: ""
+  },
+  {
+    title: "Finance & budget tracking",
+    description: "Budget vs. actuals with variance analysis and rolling forecasts. Highlights: matrix visuals with custom hierarchies, KPI cards with dynamic conditional icons, and period-over-period DAX patterns.",
+    tags: ["Variance analysis", "Rolling forecast", "Custom hierarchies"],
+    embedUrl: ""
+  }
+];
+
+const dashTabs = document.getElementById('dashTabs');
+const dashTitle = document.getElementById('dashTitle');
+const dashDesc = document.getElementById('dashDesc');
+const dashTags = document.getElementById('dashTags');
+const dashFrame = document.getElementById('dashFrame');
+const dashPlaceholder = document.getElementById('dashPlaceholder');
+
+function selectDashboard(i) {
+  const d = DASHBOARDS[i];
+  dashTabs.querySelectorAll('.dash-tab').forEach((t, j) => {
+    t.setAttribute('aria-selected', j === i ? 'true' : 'false');
+  });
+  dashTitle.textContent = d.title;
+  dashDesc.textContent = d.description;
+  dashTags.innerHTML = d.tags.map(t => `<span class="tag"></span>`).join('');
+  dashTags.querySelectorAll('.tag').forEach((el, j) => { el.textContent = d.tags[j]; });
+
+  // Remove any previous iframe, load only the selected one
+  const old = dashFrame.querySelector('iframe');
+  if (old) old.remove();
+  if (d.embedUrl) {
+    dashPlaceholder.style.display = 'none';
+    const iframe = document.createElement('iframe');
+    iframe.src = d.embedUrl;
+    iframe.title = d.title + ' dashboard';
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.loading = 'lazy';
+    dashFrame.appendChild(iframe);
+  } else {
+    dashPlaceholder.style.display = 'flex';
+  }
+}
+
+if (dashTabs && DASHBOARDS.length) {
+  DASHBOARDS.forEach((d, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'dash-tab';
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-selected', 'false');
+    btn.textContent = (i + 1).toString().padStart(2, '0') + ' · ' + d.title;
+    btn.addEventListener('click', () => selectDashboard(i));
+    dashTabs.appendChild(btn);
+  });
+  selectDashboard(0);
+}
 </script>
 
 </body>
