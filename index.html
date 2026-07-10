@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Danish Mahmood Ali — Data Analyst & M.Sc. Data Science</title>
 <meta name="description" content="Portfolio of Danish Mahmood Ali — Data Analyst with 3 years of production Power BI experience, M.Sc. Data Science student at Fulda University of Applied Sciences.">
+<meta property="og:title" content="Danish Mahmood Ali — Data Analyst & M.Sc. Data Science">
+<meta property="og:description" content="Interactive Power BI dashboard gallery, data science projects, and 3 years of production analytics experience.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="profile.jpg">
+<link rel="preconnect" href="https://app.powerbi.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -57,7 +62,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .nav-links a:hover{color:var(--text);text-decoration:none}
 
 /* ---------- Section scaffolding ---------- */
-section{padding:88px 0}
+section{padding:88px 0;scroll-margin-top:72px}
 .eyebrow{
   font-family:var(--font-mono);
   font-size:.85rem;
@@ -76,6 +81,27 @@ h2{
 
 /* ---------- Hero ---------- */
 .hero{padding:96px 0 72px}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:56px}
+.hero-text{min-width:0}
+.hero-avatar{
+  flex-shrink:0;
+  width:250px;height:250px;
+  border-radius:50%;
+  border:3px solid var(--amber);
+  box-shadow:0 0 0 6px rgba(240,180,41,.12);
+  background:var(--surface);
+  overflow:hidden;
+  position:relative;
+}
+.hero-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.avatar-fallback{
+  display:none;
+  position:absolute;inset:0;
+  align-items:center;justify-content:center;
+  font-family:var(--font-display);
+  font-size:3rem;font-weight:700;
+  color:var(--amber);
+}
 .hero-role{
   font-family:var(--font-mono);
   font-size:.9rem;
@@ -260,7 +286,7 @@ h1 .accent{color:var(--amber)}
   position:relative;
   width:100%;
   aspect-ratio:16/9.6; /* Power BI publish-to-web adds a small footer bar */
-  background:var(--surface-2);
+  background:#F4F5F7; /* light canvas so light-themed reports blend in, no dark letterboxing */
 }
 .dash-frame iframe{
   position:absolute;inset:0;
@@ -272,13 +298,13 @@ h1 .accent{color:var(--amber)}
   display:flex;flex-direction:column;
   align-items:center;justify-content:center;
   gap:10px;
-  color:var(--muted);
+  color:#5D6B7A;
   font-family:var(--font-mono);
   font-size:.85rem;
   text-align:center;
   padding:24px;
 }
-.dash-placeholder .big{font-size:2rem;color:var(--line)}
+.dash-placeholder .big{font-size:2rem;color:#C4CBD4}
 
 /* ---------- Dashboard switcher ---------- */
 .dash-tabs{
@@ -348,6 +374,9 @@ footer{
   .kpi-grid{grid-template-columns:repeat(2,1fr)}
   .skill-groups{grid-template-columns:1fr}
   .project-grid{grid-template-columns:1fr}
+  .hero-top{flex-direction:column-reverse;align-items:flex-start;gap:32px}
+  .hero-avatar{width:150px;height:150px}
+  .avatar-fallback{font-size:2.2rem}
 }
 @media (max-width:560px){
   .nav-links{display:none}
@@ -378,16 +407,28 @@ footer{
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="wrap">
-    <span class="hero-role">Data Analyst · M.Sc. Data Science @ Hochschule Fulda</span>
-    <h1>I turn raw data into decisions —<br>with <span class="accent">Power&nbsp;BI</span>, Python & SQL.</h1>
-    <p class="hero-sub">
-      Three years of production analytics experience: building ETL pipelines, automating reporting
-      workflows, and shipping dashboards that teams actually use. Currently deepening my ML skills
-      in my master's — from fairness-aware modeling to computer vision.
-    </p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#dashboards">View dashboards</a>
-      <a class="btn" href="#projects">Browse projects</a>
+    <div class="hero-top">
+      <div class="hero-text">
+        <span class="hero-role">Data Analyst · M.Sc. Data Science @ Hochschule Fulda</span>
+        <h1>I turn raw data into decisions —<br>with <span class="accent">Power&nbsp;BI</span>, Python & SQL.</h1>
+        <p class="hero-sub">
+          Three years of production analytics experience: building ETL pipelines, automating reporting
+          workflows, and shipping dashboards that teams actually use. Currently deepening my ML skills
+          in my master's — from fairness-aware modeling to computer vision.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#dashboards">View dashboards</a>
+          <a class="btn" href="#projects">Browse projects</a>
+        </div>
+      </div>
+      <!-- PROFILE PHOTO: save your LinkedIn photo as "profile.jpg"
+           in the same folder as this file (the repo root).
+           Until then, your initials show as a fallback. -->
+      <div class="hero-avatar" aria-hidden="false">
+        <img src="profile.jpg" alt="Danish Mahmood Ali"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="avatar-fallback">DMA</span>
+      </div>
     </div>
 
     <!-- Signature element: the portfolio opens like a dashboard -->
@@ -561,8 +602,8 @@ footer{
     <span class="eyebrow">-- dashboards</span>
     <h2>Power BI gallery</h2>
     <p class="section-intro">
-      Interactive reports you can click, filter, and cross-highlight — rebuilt from scratch with
-      public sample data to mirror the kinds of reporting I delivered in production.
+      The four dashboard designs my clients relied on most — rebuilt from scratch with sample
+      data so you can click, filter, and cross-highlight them live, exactly as they run in production.
     </p>
     <div class="disclaimer">
       <span class="dot"></span>
@@ -673,38 +714,38 @@ counters.forEach(c => cio.observe(c));
 /* ============================================================
    DASHBOARD GALLERY — edit this array to add your dashboards.
    Paste each Publish-to-web URL into embedUrl.
+   Optional per-dashboard properties:
+     aspect:   "width / height" from Power BI's iframe snippet,
+               e.g. "600 / 636" — defaults to "16 / 9.6"
+     maxWidth: cap the frame width for tall/portrait reports,
+               e.g. "620px" — otherwise the frame is full width
+     zoom:     scale the report, e.g. 1.25 — omit for normal
    Add or remove entries freely; the selector strip scrolls.
    ============================================================ */
 const DASHBOARDS = [
   {
-    title: "Sales & revenue overview",
-    description: "Executive-level view of revenue, margin, and regional performance with drill-through to product detail. Highlights: dynamic time intelligence in DAX, a star-schema data model, and bookmark-driven navigation.",
-    tags: ["DAX time intelligence", "Star schema", "Drill-through"],
-    embedUrl: ""
+    title: "Digital Shelf - Availability",
+    description: "Product availability monitoring across brands, platforms, and stores — headline availability KPI with period comparisons, best/worst performing product and store rankings, and a brand-vs-platform trend view. Highlights: time-intelligence toggles (MTD, YTD, LY, last 4 weeks) driven by bookmarks, a conditionally formatted brand × platform × month matrix for spotting problem cells at a glance, and dynamic Top-N ranking measures.",
+    tags: ["Time intelligence", "Conditional formatting", "Top-N ranking"],
+    embedUrl: "https://app.powerbi.com/view?r=eyJrIjoiODJjOGE0MGQtY2Q5Zi00ZGJlLWE4NDYtNDVkYjQ4ZTNkMTQ0IiwidCI6IjhlNjk3MjY2LWRiOTUtNGM2Mi1hNjNhLWFlYmMyNmM4ODIwMiIsImMiOjl9"
   },
   {
-    title: "Operations & process monitoring",
-    description: "Operational dashboard tracking throughput, SLA compliance, and bottlenecks. Highlights: incremental-refresh-ready model design, conditional formatting for exception surfacing, and automated refresh via scheduled pipelines.",
-    tags: ["SLA tracking", "Conditional formatting", "Automated refresh"],
-    embedUrl: ""
+    title: "Digital Shelf Analytics",
+    description: "E-commerce product visibility tracking — search rankings, content compliance, and share of shelf across retailers. Highlights: weighted share-of-shelf measures, keyword-level rank tracking over time, and retailer comparison views for spotting distribution gaps.",
+    tags: ["Share of shelf", "Content scoring", "Retailer comparison"],
+    embedUrl: "https://app.powerbi.com/view?r=eyJrIjoiZTYxY2Q2MWQtNjZhMC00Y2ZiLThiMzktZjdjNDZiM2Q4NzM5IiwidCI6IjhlNjk3MjY2LWRiOTUtNGM2Mi1hNjNhLWFlYmMyNmM4ODIwMiIsImMiOjl9",
   },
   {
-    title: "HR & workforce analytics",
-    description: "Headcount, attrition, and hiring-funnel analysis with slicer-driven cohort comparisons. Highlights: what-if parameters, decomposition tree for attrition drivers, and row-level design considerations.",
-    tags: ["What-if parameters", "Decomposition tree", "Cohort analysis"],
-    embedUrl: ""
+    title: "Ad Campaign Performance",
+    description: "Campaign spend, impressions, CTR, and conversion tracking across channels. Highlights: custom DAX measures for ROAS, slicer-driven date comparisons, and drill-through to campaign detail.",
+    tags: ["ROAS measures", "Channel comparison", "Drill-through"],
+    embedUrl: "https://app.powerbi.com/view?r=eyJrIjoiNjViZjkxYjItNzczZi00ODNhLTgxNzktY2NkNDgyYzVmMjJjIiwidCI6IjhlNjk3MjY2LWRiOTUtNGM2Mi1hNjNhLWFlYmMyNmM4ODIwMiIsImMiOjl9"
   },
   {
-    title: "Marketing performance",
-    description: "Campaign ROI, channel attribution, and funnel conversion tracking. Highlights: custom DAX attribution measures, dynamic titles driven by slicer state, and field parameters for metric switching.",
-    tags: ["Attribution", "Field parameters", "Funnel analysis"],
-    embedUrl: ""
-  },
-  {
-    title: "Finance & budget tracking",
-    description: "Budget vs. actuals with variance analysis and rolling forecasts. Highlights: matrix visuals with custom hierarchies, KPI cards with dynamic conditional icons, and period-over-period DAX patterns.",
-    tags: ["Variance analysis", "Rolling forecast", "Custom hierarchies"],
-    embedUrl: ""
+    title: "Internal Ad Spend Monitoring - GCC Markets",
+    description: "Internal monitoring dashboard for retail media performance across UAE, KSA, Kuwait, and Qatar — spend, sales, and ROAS KPIs with dual-currency reporting (local currency + USD), an asset-type trend view, and performance breakdowns by product, campaign, keyword, and category. Highlights: button-driven country navigation, dynamic currency-conversion measures, a metric-switching trend chart, and consistent KPI logic reused across four market pages.",
+    tags: ["Multi-market navigation", "Currency conversion", "Retail media KPIs"],
+    embedUrl: "https://app.powerbi.com/view?r=eyJrIjoiMWFlNmExZWYtNjZhZi00YTg3LThkNzEtNGJiN2Q0YTg0MTE0IiwidCI6IjhlNjk3MjY2LWRiOTUtNGM2Mi1hNjNhLWFlYmMyNmM4ODIwMiIsImMiOjl9"
   }
 ];
 
@@ -725,6 +766,12 @@ function selectDashboard(i) {
   dashTags.innerHTML = d.tags.map(t => `<span class="tag"></span>`).join('');
   dashTags.querySelectorAll('.tag').forEach((el, j) => { el.textContent = d.tags[j]; });
 
+  // Per-dashboard sizing: aspect from Power BI's iframe snippet
+  // (width/height), optional maxWidth for tall/portrait reports.
+  dashFrame.style.aspectRatio = d.aspect || '16 / 9.6';
+  dashFrame.style.maxWidth = d.maxWidth || '';
+  dashFrame.style.margin = d.maxWidth ? '0 auto' : '';
+
   // Remove any previous iframe, load only the selected one
   const old = dashFrame.querySelector('iframe');
   if (old) old.remove();
@@ -735,6 +782,14 @@ function selectDashboard(i) {
     iframe.title = d.title + ' dashboard';
     iframe.setAttribute('allowfullscreen', '');
     iframe.loading = 'lazy';
+    // Optional zoom: e.g. zoom: 1.25 renders the report 25% larger.
+    const z = d.zoom || 1;
+    if (z !== 1) {
+      iframe.style.width = (100 / z) + '%';
+      iframe.style.height = (100 / z) + '%';
+      iframe.style.transform = 'scale(' + z + ')';
+      iframe.style.transformOrigin = 'top left';
+    }
     dashFrame.appendChild(iframe);
   } else {
     dashPlaceholder.style.display = 'flex';
